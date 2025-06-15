@@ -1,5 +1,5 @@
 // Run the script only after the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function () {
     // Select DOM elements
     const addButton = document.getElementById('add-task-btn');
     const taskInput = document.getElementById('task-input');
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         removeBtn.className = 'remove-btn';
 
         // Add click event to remove the task
-        removeBtn.onclick = () => {
+        removeBtn.onclick = function () {
             taskList.removeChild(li);
         };
 
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     addButton.addEventListener('click', addTask);
 
     // Add event listener to input field for Enter key
-    taskInput.addEventListener('keypress', (event) => {
+    taskInput.addEventListener('keypress', function (event) {
         if (event.key === 'Enter') {
             addTask();
         }
